@@ -1,0 +1,155 @@
+// BASE
+a {
+	&:hover {
+		text-decoration-color: $secondary;
+	}
+}
+
+// UTILS
+.block {
+	@extend .py-5;
+}
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.mw-sm {
+	max-width: 576px;
+}
+
+// COMPONENTS
+p.description {
+	color: $gray-600;
+	font-style: italic;
+}
+
+.bg-primary {
+	color: $white;
+
+	p.description {
+		color: $gray-500;
+	}
+}
+
+#page-wrapper {
+	padding-bottom: 0;
+}
+
+div.separator {
+	@extend .bg-secondary;
+	width: $spacer * 3.5;
+	height: $spacer / 4;
+	margin-bottom: $headings-margin-bottom * 0.6;
+	display: inline-block;
+}
+section .header {
+	p.description {
+		margin-bottom: $spacer * 3;
+	}
+
+	i.fa {
+		font-size: 2rem;
+		margin-bottom: $headings-margin-bottom;
+		color: $secondary;
+	}
+
+	h2 {
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 1.75rem;
+	}
+}
+
+.service-card {
+	@extend .text-center;
+
+	p {
+		@extend .text-muted;
+	}
+
+	.wp-post-image {
+		@extend .mb-3;
+	}
+}
+
+div.testimonial {
+	.photo {
+		@extend .mb-3, .rounded-circle;
+		border: 2px solid $secondary;
+		width: 120px;
+		height: 120px;
+		background-size: cover;
+		background-position: center center;
+	}
+
+	q {
+		display: block;
+		@extend .mb-3;
+	}
+	h4 {
+		@extend .mb-0, .text-secondary;
+	}
+}
+
+.owl-nav {
+	display: none;
+}
+
+.owl-dots {
+	margin: 0 auto;
+	text-align: center;
+
+	.owl-dot {
+		width: 10px;
+		height: 10px;
+		background: $secondary !important;
+		margin-right: 10px;
+		opacity: 0.4;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	.owl-dot.active {
+		opacity: 1;
+	}
+}
+
+.entry-meta,
+.wp-post-image {
+	@extend .mb-3;
+}
+
+aside.widget,
+.footer-widget {
+	@extend .mb-4;
+
+	ul {
+		list-style: none;
+		padding-left: 0;
+
+		li {
+			@extend .mb-2;
+		}
+	}
+}
+// LAYOUT
+.cover {
+	@extend .flex-center;
+	margin-top: -30px; // keep same as page-wrapper top padding.
+	min-height: 600px;
+	background-color: $primary;
+	color: #fff;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+
+	h1 {
+		@include media-breakpoint-up(lg) {
+			font-size: 4rem;
+		}
+	}
+}
+// PAGE(s)
